@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../constants/text.dart';
 import '../components/order_list.dart';
 
 class CoffeeBill extends StatelessWidget {
@@ -69,23 +70,17 @@ class CoffeeBill extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Tabaq Coffee',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontFamily: GoogleFonts.poppins().fontFamily,
-                              ),
+                          children: const [
+                            CustomText(
+                              fontSize: 18,
+                              fontweight: FontWeight.normal,
+                              text: 'Tabaq Coffee',
                             ),
-                            const SizedBox(height: 5),
-                            Text(
-                              'Bashundhara R/A, No. 1',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontFamily: GoogleFonts.poppins().fontFamily,
-                              ),
+                            SizedBox(height: 5),
+                            CustomText(
+                              fontSize: 12,
+                              fontweight: FontWeight.normal,
+                              text: 'Bashundhara R/A, Dhaka',
                             ),
                           ],
                         ),
@@ -103,13 +98,10 @@ class CoffeeBill extends StatelessWidget {
                       color: Colors.white,
                     ),
                     const SizedBox(height: 30),
-                    Text(
-                      'Your Order',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: GoogleFonts.poppins().fontFamily,
-                      ),
+                    const CustomText(
+                      fontSize: 18,
+                      fontweight: FontWeight.normal,
+                      text: 'Your Order',
                     ),
                     const SizedBox(height: 20),
                     const OrderList(),
@@ -122,13 +114,10 @@ class CoffeeBill extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Total',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: GoogleFonts.poppins().fontFamily,
-                          ),
+                        const CustomText(
+                          fontSize: 18,
+                          fontweight: FontWeight.normal,
+                          text: 'Total',
                         ),
                         Text(
                           '৳ 300',
@@ -150,4 +139,3 @@ class CoffeeBill extends StatelessWidget {
     );
   }
 }
-

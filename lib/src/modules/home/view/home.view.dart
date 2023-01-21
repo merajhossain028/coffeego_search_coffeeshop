@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../constants/text.dart';
 import '../../bill/view/bill.dart';
 
 class HomeView extends StatefulWidget {
@@ -52,23 +53,16 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  'Tabaq Coffee GO',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 38,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: GoogleFonts.poppins().fontFamily,
-                  ),
+                const CustomText(
+                  fontSize: 38,
+                  fontweight: FontWeight.bold,
+                  text: 'Tabaq Coffee GO',
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  'Search Your Nearest Tabaq Coffee Shop',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontFamily: GoogleFonts.poppins().fontFamily,
-                  ),
+                const CustomText(
+                  fontSize: 14,
+                  fontweight: FontWeight.normal,
+                  text: 'Search Your Nearest Tabaq Coffee Shop',
                 ),
                 const SizedBox(height: 60),
                 Padding(
