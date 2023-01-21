@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../constants/text.dart';
+import '../../../constants/custom_text.dart';
 import '../../bill/view/bill.dart';
 
 class HomeView extends StatefulWidget {

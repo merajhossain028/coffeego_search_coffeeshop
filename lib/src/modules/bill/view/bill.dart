@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../constants/text.dart';
+import '../../../constants/custom_text.dart';
 import '../components/order_list.dart';
 
 class CoffeeBill extends StatelessWidget {
