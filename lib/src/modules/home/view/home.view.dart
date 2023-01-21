@@ -1,19 +1,16 @@
 import 'dart:ui';
 
+import 'package:coffeego/src/constants/constants.dart';
+import 'package:coffeego/src/constants/custom.routes.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants/custom_text.dart';
 import '../../bill/view/bill.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -36,7 +33,7 @@ class _HomeViewState extends State<HomeView> {
             width: size.width,
             color: Colors.black.withOpacity(0.8),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: mainCenter,
               children: [
                 Container(
                   height: 100,
@@ -67,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: mainCenter,
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -77,16 +74,15 @@ class _HomeViewState extends State<HomeView> {
                           const url =
                               'https://www.google.com/maps/search/Tabaq+coffee+shop+near+me/';
                           final uri = Uri.parse(url);
-                          if (await canLaunchUrl(uri)) {
-                            await launchUrl(uri);
-                          } else {
-                            throw 'Could not launch $url';
+                          if (!await launchUrl(uri)) {
+                            throw 'Could not launch';
                           }
                         },
                         child: const Text(
                           'Go to the SHOP',
                           style: TextStyle(fontSize: 18),
                         ),
+                        
                       ),
                       const Spacer(),
                       ElevatedButton(
@@ -96,9 +92,7 @@ class _HomeViewState extends State<HomeView> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => const CoffeeBill(),
-                            ),
+                            SlideLeftRoute(page: const CoffeeBill()),
                           );
                         },
                         child: const Text(

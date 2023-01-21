@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:coffeego/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,11 +16,6 @@ class CoffeeBill extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(0),
-          ),
-        ),
         elevation: 0,
         title: Text(
           'Coffee Bill',
@@ -61,15 +57,15 @@ class CoffeeBill extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: crossStart,
                   children: [
                     const SizedBox(height: 20),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: mainSpaceBetween,
                       children: [
                         Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: crossStart,
+                          mainAxisAlignment: mainStart,
                           children: const [
                             CustomText(
                               fontSize: 18,
@@ -112,20 +108,17 @@ class CoffeeBill extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const CustomText(
+                      mainAxisAlignment: mainSpaceBetween,
+                      children: const [
+                        CustomText(
                           fontSize: 18,
                           fontweight: FontWeight.normal,
                           text: 'Total',
                         ),
-                        Text(
-                          '৳ 300',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: GoogleFonts.poppins().fontFamily,
-                          ),
+                        CustomText(
+                          fontSize: 18,
+                          fontweight: FontWeight.normal,
+                          text: '৳ 300',
                         ),
                       ],
                     ),

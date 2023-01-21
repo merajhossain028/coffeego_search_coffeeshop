@@ -142,12 +142,6 @@ final _tooltipTheme = TooltipThemeData(
 );
 
 const _appBarTheme = AppBarTheme(
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.only(
-      bottomRight: Radius.circular(30),
-      bottomLeft: Radius.circular(30),
-    ),
-  ),
   shadowColor: _shadowColor,
   iconTheme: IconThemeData(color: _iconColorSecondary),
   color: _backgroundColor,
